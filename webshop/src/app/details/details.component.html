@@ -1,6 +1,6 @@
-<div *ngIf='book'>
-    DETAILS:
-    <img src="{{book.imageLinks.smallThumbnail}}" alt="the cover of {{book.title}}">
+<div *ngIf='book' class="row">
+    <img *ngIf="book.imageLinks && book.imageLinks.smallThumbnail" src="{{book.imageLinks.smallThumbnail}}" alt="the cover of {{book.title}}">
+    <input type="button" (click)="cart(book)" value="Cart"/>
     <p *ngFor="let author of book.authors">{{author}}:</p>
     <p>Title: {{book.title}}</p>
     <p>(published: {{book.publishedDate}})</p>

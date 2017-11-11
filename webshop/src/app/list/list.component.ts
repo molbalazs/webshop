@@ -8,12 +8,12 @@ import { BookService } from '../book.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ListComponent implements OnInit {
-  books = [];
+  books;
 
   @Output() selectBook: EventEmitter<Object> = new EventEmitter();
 
   constructor(private bookService: BookService) {
-    bookService.bookInfo$.subscribe(bookInfo => {this.books = <[any]>bookInfo; console.log(this.books)});
+    bookService.bookInfo$.subscribe(bookInfo => this.books = bookInfo);
   }
 
   ngOnInit() {

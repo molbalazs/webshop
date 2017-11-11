@@ -1,6 +1,9 @@
-<ul>
-  <li *ngFor="let book of books" (click)="this.selectBook.emit(book)">
-    <b *ngFor="let author of book.authors">{{author}}:</b>
-    <i>{{book.title}}</i>
-  </li>
-</ul>
+<div *ngIf="books" >
+      I have found the following books:
+      <ul>
+        <li *ngFor="let book of books" (click)="this.selectBook.emit(book)">
+          <b *ngFor="let author of book.authors">{{author}}:</b>
+          <i>{{book.title}}</i>
+        </li>
+      </ul>
+</div>

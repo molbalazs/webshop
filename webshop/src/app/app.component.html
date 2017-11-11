@@ -1,3 +1,7 @@
-<app-search></app-search>
-<app-list (selectBook)="selectedBook = $event"></app-list>
-<app-details [book]=selectedBook></app-details>
+<div class="row">
+    <div class="col-sm-4">
+        <app-search></app-search>
+        <app-list (selectBook)="selectedBook = $event"></app-list>
+    </div>
+    <app-details [book]=selectedBook class="col-sm-4"></app-details>
+</div>
