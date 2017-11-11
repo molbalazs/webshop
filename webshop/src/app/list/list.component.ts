@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, EventEmitter, Output } from '@angular/core';
 import { BookService } from '../book.service';
 
 @Component({
@@ -8,10 +8,12 @@ import { BookService } from '../book.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ListComponent implements OnInit {
-  books;
+  books = [];
 
-  constructor(bookService: BookService) {
-    bookService.bookInfo$.subscribe(bookInfo => this.books = bookInfo);
+  @Output() selectBook: EventEmitter<Object> = new EventEmitter();
+
+  constructor(private bookService: BookService) {
+    bookService.bookInfo$.subscribe(bookInfo => {this.books = <[any]>bookInfo; console.log(this.books)});
   }
 
   ngOnInit() {

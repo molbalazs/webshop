@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { BookService } from './book.service';
 import { SearchComponent } from './search/search.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    DetailsComponent
   ],
   imports: [
     FormsModule,

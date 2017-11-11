@@ -1,2 +1,3 @@
 <app-search></app-search>
-<app-list></app-list>
+<app-list (selectBook)="selectedBook = $event"></app-list>
+<app-details [book]=selectedBook></app-details>

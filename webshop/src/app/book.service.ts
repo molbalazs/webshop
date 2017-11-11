@@ -6,6 +6,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable()
 export class BookService {
   public bookInfo$ = new Subject();
+  public bookDetails$ = new Subject();
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,7 @@
+<div *ngIf='book'>
+    DETAILS:
+    <img src="{{book.imageLinks.smallThumbnail}}" alt="the cover of {{book.title}}">
+    <p *ngFor="let author of book.authors">{{author}}:</p>
+    <p>Title: {{book.title}}</p>
+    <p>(published: {{book.publishedDate}})</p>
+</div>
