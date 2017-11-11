@@ -10,7 +10,6 @@ import { BookService } from '../book.service';
 export class SearchComponent implements OnInit {
   bookService;
   searchString;
-  
   constructor(bookService: BookService) {
     this.bookService = bookService;
    }
@@ -18,7 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  onKeyDown(){
+  onKeyDown() {
     this.bookService.searchFor(this.searchString);
   }
 }

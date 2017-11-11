@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  cart(book){
+  cart(book) {
     this.cartService.addBook(book);
   }
 

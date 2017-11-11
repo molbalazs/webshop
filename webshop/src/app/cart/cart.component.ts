@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
     this.cartContent = this.cartService.getCart();
   }
 
-  removeBook(book){
+  removeBook(book) {
     this.cartService.removeBook(book);
   }
 }
