@@ -10,6 +10,7 @@ import { BookService } from './book.service';
 import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     CookieModule.forRoot()
   ],
-  providers: [BookService],
+  providers: [BookService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

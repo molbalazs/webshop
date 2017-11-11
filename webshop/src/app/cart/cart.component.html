@@ -1,3 +1,13 @@
-<p>
-  cart works!
-</p>
+<div *ngIf="cartContent && cartContent.length > 0" >
+    The content of your cart:
+    <ul>
+      <li *ngFor="let book of cartContent">
+        <i>{{book.title}} by </i>
+        <b *ngFor="let author of book.authors">{{author}}</b>
+        <b (click)="removeBook(book)">[Remove]</b>
+      </li>
+    </ul>
+</div>
+<div *ngIf="cartContent === undefined || cartContent.length === 0" >
+    Your cart is empty
+</div>
