@@ -10,8 +10,8 @@ export class CartService {
   public cartContent$ = new Subject();
 
   constructor(private cookieService: CookieService) {
-    const cookieContent = JSON.parse(this.cookieService.get(this.COOKIE_KEY));
-    this.cartContent = cookieContent ? cookieContent : [];
+    const cookieContent = this.cookieService.get(this.COOKIE_KEY);
+    this.cartContent = cookieContent ? JSON.parse(cookieContent) : [];
     this.cartContent$.next(this.cartContent);
   }
 
