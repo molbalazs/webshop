@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BookService } from '../book.service';
 
 describe('SearchComponent', () => {
-  const ENTER_EVENT = new KeyboardEvent('keyup', { key: "Enter" } );
+  const ENTER_EVENT = new KeyboardEvent('keyup', { key: 'Enter' } );
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
   let bookService: any;
@@ -23,7 +23,7 @@ describe('SearchComponent', () => {
         { provide: BookService, useValue: bookService }
       ],
       declarations: [ SearchComponent ]
-    })
+    });
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

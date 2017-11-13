@@ -12,7 +12,7 @@ describe('BookService', () => {
     http = jasmine.createSpyObj('Http', ['get']);
     bookService = new BookService(http);
 
-    const TEST_RESPONSE = {items:[]};
+    const TEST_RESPONSE = {items: []};
     http.get.and.returnValue(Observable.of(TEST_RESPONSE));
   });
 
