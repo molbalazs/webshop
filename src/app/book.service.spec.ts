@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Response, ResponseOptions } from '@angular/http';
 import 'rxjs/add/observable/of';
 
-fdescribe('BookService', () => {
+describe('BookService', () => {
   const GOOGLE_API_URL = 'https://www.googleapis.com/books/v1/volumes';
   let http: any;
   let bookService: any;

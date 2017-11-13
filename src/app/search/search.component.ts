@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  onKeyDown() {
+  onKeyUp() {
     this.bookService.searchFor(this.searchString);
   }
 }
