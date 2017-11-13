@@ -4,7 +4,7 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class CartService {
-  private COOKIE_KEY = '002';
+  private COOKIE_KEY = 'molbalazs_webshop_cart-content';
   private cartContent;
 
   public cartContent$ = new Subject();
