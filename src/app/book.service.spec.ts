@@ -1,15 +1,31 @@
-import { TestBed, inject } from '@angular/core/testing';
-
 import { BookService } from './book.service';
+import { Observable } from 'rxjs/Observable';
+import { Response, ResponseOptions } from '@angular/http';
+import 'rxjs/add/observable/of';
 
-describe('BookService', () => {
+fdescribe('BookService', () => {
+  const GOOGLE_API_URL = 'https://www.googleapis.com/books/v1/volumes';
+  let http: any;
+  let bookService: any;
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [BookService]
-    });
+    http = jasmine.createSpyObj('Http', ['get']);
+    bookService = new BookService(http);
+
+    const TEST_RESPONSE = {items:[]};
+    http.get.and.returnValue(Observable.of(TEST_RESPONSE));
   });
 
-  it('should be created', inject([BookService], (service: BookService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should call the endpoint with the test string', () => {
+    const testString = 'testString';
+    bookService.searchFor(testString);
+    expect(http.get).toHaveBeenCalledWith(GOOGLE_API_URL + '?q=' + testString);
+  });
+
+  it('should escape the search string string', () => {
+    const testString = 'test string with space';
+    const escapedTestString = 'test%20string%20with%20space';
+    bookService.searchFor(testString);
+    expect(http.get).toHaveBeenCalledWith(GOOGLE_API_URL + '?q=' + escapedTestString);
+  });
 });
